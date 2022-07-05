@@ -1,0 +1,55 @@
+= Protokoll Gruppe 21
+
+Treffen am 09.12.2021
+
+Ort:      Online +
+Beginn:   16:40 Uhr +
+Ende:     17:05 Uhr
+
+__Schriftführer:__
+
+*Nächstes Treffen:* +
+16.12.2021, 16:40 Uhr, Online
+
+__Teilnehmer:__
+
+- Szymon
+- Hannes
+- Ralf
+- Mika
+- Eric
+- Johannes
+- Nelli Rahn (Kunde)
+
+== Bemerkungen
+-
+
+== Retrospektive des letzten Sprints
+*Issue referenziert die Issue ID von GitHub*
+// Wie ist der Status der im letzten Sprint erstellten Issues/veteilten Aufgaben?
+
+// See http://asciidoctor.org/docs/user-manual/=tables
+[option="headers"]
+|===
+|Issue |Aufgabe |Status |Bemerkung
+|39-47 |Protoype Packages    |closed    |Wird weiter bearbeitet
+|===
+
+
+== Aktueller Stand
+-Grundfunktinalitäten erfüllt
+
+== Planung des nächsten Sprints
+-Tests schreiben
+-Dokumentation aktualisieren
+-Letzte Funktionen Implimentieren
+
+
+// See http://asciidoctor.org/docs/user-manual/=tables
+[option="headers"]
+|===
+|Issue |Titel |Beschreibung |Verantwortlicher |Status
+|51    |Tests     |Tests schreiben  |Szymon            |open
+|49    |CSS     |CSS finalisieren |Ralf & Hannes           |open
+|52    |Clean Code     |Code aufräumen |... |open
+|===

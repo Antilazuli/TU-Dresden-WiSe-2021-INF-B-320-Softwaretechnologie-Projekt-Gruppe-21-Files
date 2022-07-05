@@ -1,0 +1,95 @@
+= Test-Plan
+
+Dieser Testplan stellt eine vereinfachte Version der IEEE 829-1998 Vorlage dar.
+
+== Einführung
+
+Der Testplan skizziert verschiedene Komponenten des Testprozesses, wie Teststrategie, Ergebnisse usw., die dem Kunden und anderen Beteiligten helfen, einen tieferen Einblick in den Testprozess zu erhalten.
+Er ist ein wichtiger Leitfaden, der verwendet wird, um den Erfolg des Projekts sicherzustellen.
+Außerdem hilft es dem Testteam, verschiedene mit dem Testprozess verbundene Risiken zu kontrollieren und Änderungen im Testprozess zu verfolgen und notwendige Anpassungen vorzunehmen.
+
+== Aufbau der Testbezeichner
+
+*U - Unit Test, I - Integrationstest*
+
+Zusätzlich Nummerierung nach Themengebieten bzw. ähnlichen Funktionen.
+
+Bsp.: *I-010, I-011, U-010*
+
+== Test Gegenstände
+
+== Zu testende Funktionalitäten
+
+* Login
+* Registration
+* Userverwaltung
+* Zimmer buchen
+* Serviceartikel bestellen
+* Urlaub einreichen
+* Anzeigen des Angebots
+
+== Nicht zu testende Funktionalitäten
+z.B. Bibliotheken von Drittanbietern (eigene Tests beschränken sich auf Schnittstelle, bzw. Zusammenspiel).
+
+* Spring Framework |Bibliotheken von Drittanbieter
+* Salespoint Framework |Bibliotheken von Drittanbieter
+* Server
+
+== Herangehensweise
+
+Klassen werden mit JUnit getestet.
+Wenn deren Funktionalität gegeben ist können anschließend Integrationstests, mit Beispieldaten auf der Weboberfläche ausgeführt werden.
+Zuerst werden elementare Funktionen getestet, bevor komplexe Zusammenhänge getestet werden. Dieses Vorgehen entspricht dem Bottom-Up Prinzip.
+
+== Umgebungsvoraussetzungen
+
+Die Tests werden hauptsächlich mit JUnit geschrieben und ausgeführt. Dabei wird mit bestimmten, festen Eingabevariablen überprüft, ob die Ausgabe dem gewünschtem Ergebnis entspricht, welches vorher manuell festgelegt wurde. Wenn die Testausgabe nicht dem gewünschtem Ausgabewert(en) entspricht soll der Test fehlschlagen und das erreichte Ergebnis zur Überprüfung des Codes anzeigen.
+Ausgaben können je nach Testfall in der JUnit-Konsole oder im Browser angezeigt werden.
+
+Spezielle Tests, die nicht mit JUnit durchgeführt werden können, werden im Browser getestet. Darunter zählt z.B. die korrekte und überprüfte Eingabe der Nutzerdaten und deren Übermittlung in die Java-Quelldateien. Dies wird hauptsächlich durch HTML realisiert und muss gesondert getestet werden.
+
+== Testfälle und Verantwortlichkeit
+Jede testbezogene Aufgabe muss einem Ansprechpartner zugeordnet werden.
+
+=== Unit-Tests
+
+[options="headers"]
+|===
+|ID |Anwendungsfall |Vorbedingungen |Eingabe |Ausgabe |Verantwortlicher
+|U-001  |getter Member|existierender Member|- |Rückgabe des Member mit Name, E-Mail, Telefonnummer, Passwort, Kreditkartennummer |Ralf
+|U-002  |setter Member|existiertender Member|gültige Angaben |Setzen der entsprechenden Angaben   |Ralf
+|U-003  |setter Member|existierender Member|ungültige Eingaben (leerer String "") |IllegalArgumentException   |Ralf
+|U-004  |setter Member|existierender Member|ungültige Eingaben (nicht valide E-Mail, Telefonnummer) |IllegalArgumentException   |Ralf
+|U-005	|create Member|-|gültige Angaben|Member wird angelegt|Ralf
+|U-011	|getter RoomType|existierende Room-Elemente|-|Rückgabe Room-Liste mit bestimmten RoomType|Mika
+|U-012	|getter RoomState|existierende Room-Elemente|-|Rückgabe Room-Liste mit bestimmten RoomState|Mika
+|U-013	|getter CleaningState|existierende Room-Elemente|-|Rückgabe Room-Liste mit bestimmten CleaningState|Mika
+|U-014	|getter ArticleType|existierende Article-Elemente|-|Rückgabe Article-Liste mit bestimmten ArticleType|Mika
+|U-015	|setter amount|existierende Room-Elemente|ungültige Eingabe(>1)|number wird auf Eins gesetzt|Hannes
+|U-016  |findByType RoomService |- |falsche Parameter eingegeben |- | Szymon
+
+|===
+
+=== Integrationstestfälle
+
+[options="headers"]
+|===
+|ID |Anwendungsfall |Vorbedingungen |Eingabe |Ausgabe |Verantwortlicher
+|I-001  |Login |unauthentifizierter Nutzer benutzt das System |ungültige Nutzerdaten (E-Mail, Passwort) |Fehlermeldung |Johannes
+|I-002  |Login  |unauthentifizierter Nutzer benutzt das System  |gültige Nutzerdaten (E-Mail, Passwort)  |Benutzer ist eingeloggt  |Johannes
+|I-003  |Logout |authentifizierter Nutzer benutzt das System  |Klick auf Button "Ausloggen" |Benutzer ist ausgeloggt |Johannes
+|I-004  |Registrieren |unauthentifizierter Nutzer benutzt das System  |ungültige Nutzerdaten (E-Mail bereits vergeben) |Fehlermeldung  |Johannes
+|I-005  |Registrieren |unauthentifizierter Nutzer benutzt das System  |ungültige Nutzerdaten (ungültige E-Mail oder Telefonnumer)  |Fehlermeldung  |Johannes
+|I-006	|Registrieren |unauthentifizierter Nutzer benutzt das System  |gültige Nutzerdaten|Benutzerkonto wird angelegt|Johannes
+|I-011	|Filter	|Nutzer filtert die Rooms|Filterkriterium|zugehörige Liste der Elemente|Mika
+|I-012	|Filter	|Nutzer filtert die Artikel|Filterkriterium|zugehörige Liste der Elemente|Mika
+|I-013	|Bezahlen|Es existiert eine Buchung|Bestätigung der Buchung mit Klick auf Button “Buchen”|Bestätigung (pdf/ Textanzeige)|Ralf
+|I-014	|Buchungen einsehen|Eine Buchung wurde abgeschlossen und besitzt den Status COMPLETED|Manager meldet sich an und sieht Buchungen ein|Abgeschlossene Buchungen werden ausgegeben|Ralf
+|I-015	|Buchungen einsehen|Räume wurden zum Warenkorb hinzugefügt|Registrierter Gast sieht Warenkorb ein|Hinzugefügte Buchungen werden ausgegeben|Ralf
+|I-016	|Raum zum Warenkorb hinzufügen|Ein registrierter Gast meldet sich an |Gast fügt einen Raum aus dem Katalog zu seinem Warenkorb hinzu|Raum wird zum Warenkorb hinzugefügt|Ralf
+|I-017  |Filter |die Sortierung funktioniert korrekt |korrekte Ausgabe fuer findByType |die Liste der Elemente wird ausgegeben |Szymon
+|I-018  |Endpoint aufrufen | Endpoint mit korrekten Parametern aufgerufen |falsche Parameter |http-Code 500 |Szymon
+|I-019  |Endpoint aufrufen | Endpoint mit fehlenden Parametern aufgerufen |- |- |Szymon
+|I-020  |Endpoint | vorhandene Endpoints zurückgeben |keine Endpoints vorhanden |404 | Szymon
+
+|===

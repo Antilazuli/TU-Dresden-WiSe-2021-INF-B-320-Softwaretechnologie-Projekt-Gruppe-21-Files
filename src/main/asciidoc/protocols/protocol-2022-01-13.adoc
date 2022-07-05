@@ -1,0 +1,69 @@
+= Protokoll Gruppe 21
+
+Treffen am 13.01.2021
+
+Ort:      Online +
+Beginn:   16:40 Uhr +
+Ende:     16:55 Uhr
+
+__Schriftführer:__
+Eric Müller
+
+*Nächstes Treffen:* +
+20.01.2021, 16:40 Uhr, Online
+
+__Teilnehmer:__
+//Tabellarisch oder Aufzählung, Kennzeichnung von Teilnehmern mit besonderer Rolle (z.B. Kunde)
+
+- Szymon
+- Ralf
+- Mika
+- Eric
+- Johannes
+- Nelli Rahn (Kunde)
+
+== Bemerkungen
+- Funktionalitäten abgenommen
+- Kunden Sonderwunsch erhlaten
+
+== Retrospektive des letzten Sprints
+*Issue referenziert die Issue ID von GitHub*
+// Wie ist der Status der im letzten Sprint erstellten Issues/veteilten Aufgaben?
+
+// See http://asciidoctor.org/docs/user-manual/=tables
+[option="headers"]
+|===
+|Issue |Aufgabe |Status |Bemerkung
+|#59     |Crosstesting       |closed      |/
+|#62     |Zimmer sortieren       |closed      |/
+|#65     |Benutzerdaten ändern       |closed      |/
+|#66     |Artikel Sortieren      |closed      |/
+|#67     |Registrierung       |closed      |/
+|#69     |Personal Löschen      |closed      |/
+|#70     |Personal kann Daten Bearbeiten      |closed      |/
+|===
+
+
+== Aktueller Stand
+- Funktionalitätwen abgenommen
+- Tests unvollständig
+- Validirung unvollständig
+
+
+== Planung des nächsten Sprints
+*Issue referenziert die Issue ID von GitHub*
+
+// See http://asciidoctor.org/docs/user-manual/=tables
+[option="headers"]
+|===
+|Issue |Titel |Beschreibung |Verantwortlicher |Status
+|#51     |Test schreiben       |Tests schreiben      |alle |angefangen
+|#52     |Clean Code       |Code überarbeiten      |Mika/ Joahnnes |70% done
+|#53     |Validierung       |User eingaben validieren      |alle |angefangen
+|#60     |Design       |HTML und CSS überarbeiten      |alle |optional
+|#63     |Alternativen vorschlagen       |alternative Zimmer vorschlagen      |alle |optional
+|#64     |Zimmerservice für bestimmtes Zimmer      |Bevor man eine Bestellung abschickt wählt der Gast ein Zimmer aus wo die Bestellung hin soll (falls mehrere Zimmer gebucht wurden)      |alle |optional
+|#68     |Zimmerservice bearbeiten       |Zimmerservice durch manager bearbneitabr     |alle |optional
+|#71     |Telefonische Buchung       |Manager kann für gast buchung erstellen    |alle |optional
+|#72     |Kundenbewerung       |Kunden mit abgeschlossener buchung können bewerungen hinterlassen      |Mika |open
+|===

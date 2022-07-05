@@ -1,0 +1,56 @@
+= Protokoll Gruppe 21
+
+Treffen am 25.11.2021
+
+Ort:      Online +
+Beginn:   16:40 Uhr +
+Ende:     17:10 Uhr
+
+__Schriftführer:__ Hannes Richter
+
+*Nächstes Treffen:* +
+02.12.2021, 16:40 Uhr, Online
+
+__Teilnehmer:__
+//Tabellarisch oder Aufzählung, Kennzeichnung von Teilnehmern mit besonderer Rolle (z.B. Kunde)
+
+- Hannes
+- Ralf
+- Mika
+- Eric
+- Johannes
+- Nelli Rahn (Kunde)
+
+== Bemerkungen
+
+== Retrospektive des letzten Sprints
+
+[option="headers"]
+|===
+|Issue |Aufgabe |Status |Bemerkung
+|39-47 |Protoype Packages    |open    |Wir in finales Projekt überführt
+|===
+
+
+== Aktueller Stand
+-Prototyp Grundfunktinalität erfüllt
+
+== Planung des nächsten Sprints
+-OOP I
+-Um weitere Funktionen erweitern
+-Präsentation vorbereiten
+-css finalisieren
+
+// See http://asciidoctor.org/docs/user-manual/=tables
+[option="headers"]
+|===
+|Issue |Titel |Beschreibung |Verantwortlicher |Status
+|41 |Protoype Order |Service Bestellungen |Mika & Eric |open
+|42 |Protoype Member |Beschreibung jeglicher Nutzerklassen |Johannes |open
+|43 |Protoype Catalog |Beide Kataloge (Service & Room) |Mika |open
+|45 |Protype Booking |Zimmerbuchungen verwalten |Hannes & Mika |open
+|46 |Protoype Security |Seiten Sicherheit |Johannes |open
+|47 |Protoype Roaster |Dienstplan |Johannes |open
+|48 |Präsentation |Präsentation vorbereiten |Hannes |open
+|49 |Final CSS |Finales CSS Design |Ralf |open
+|===

@@ -1,0 +1,63 @@
+= Protokoll Gruppe 21
+
+Treffen am 03.11.2021
+
+Ort:      Online +
+Beginn:   18:30 Uhr +
+Ende:     19:30 Uhr
+
+__Schriftführer:__ Eric Müller
+
+*Nächstes Treffen:* +
+11.11.2021, 16:40 Uhr, Online
+
+__Teilnehmer:__
+//Tabellarisch oder Aufzählung, Kennzeichnung von Teilnehmern mit besonderer Rolle (z.B. Kunde)
+
+- Szymon
+- Hannes
+- Ralf
+- Mika
+- Eric
+- Johannes
+- Nelli Rahn (Kunde)
+
+== Bemerkungen
+Johannes als offiziellen Scrum-Master festgelegt.
+
+== Retrospektive des letzten Sprints
+*Issue referenziert die Issue ID von GitHub*
+// Wie ist der Status der im letzten Sprint erstellten Issues/veteilten Aufgaben?
+
+// See http://asciidoctor.org/docs/user-manual/=tables
+[option="headers"]
+[option="headers"]
+|===
+|Issue |Aufgabe |Status |Bemerkung
+|#1     |Pflichtenheft_Inhalt-Interessensgruppen                |closed     |Abgeschlossen
+|#2     |Pflichtenheft_Systemgrenzen-Top_Level_Architektur      |closed     |Abgeschlossen
+|#3     |Pflichtenheft_Anwendungsfälle                          |closed     |Abgeschlossen
+|#4     |Pflichtenheft_Anforderungen                            |closed     |Abgeschlossen
+|#5     |Pflichtenheft_GUI-Prototyp                             |closed     |Abgeschlossen
+|#6     |Pflichtenheft_Datenmodell                              |offen      |fast fertig
+|#7     |Pflichtenheft_Rechtschreibprüfung                      |offen      |unbearbeitet
+|#8     |Pflichtenheft_Glossar                                  |offen      |unbearbeitet
+|#9     |Pflichtenheft_Akzeptanzfälle                           |offen      |unbearbeiztet
+|===
+
+
+== Aktueller Stand
+- Videoshop Aufgaben abgeschlossen
+- Pflichtenheft abgegeben. Muss aber noch in einzelnen Punkten überarbeitet werden.
+
+== Planung des nächsten Sprints
+- Pflichtenheft abschließen.
+- Vorbereiten und bearbeiten des nächsten Meilensteins.
+
+|===
+|Issue |Aufgabe |Status |Bemerkung
+|#6     |Pflichtenheft_Datenmodell                              |offen      |fast fertig
+|#7     |Pflichtenheft_Rechtschreibprüfung                      |offen      |unbearbeitet
+|#8     |Pflichtenheft_Glossar                                  |offen      |unbearbeitet
+|#9     |Pflichtenheft_Akzeptanzfälle                           |offen      |unbearbeiztet
+|===

@@ -1,0 +1,34 @@
+= Protokoll Gruppe 21
+
+Treffen am 13.10.2021
+
+Ort:      Ort des Treffens +
+Beginn:   xx:xx Uhr +
+Ende:     xx:xx Uhr
+
+__Schriftführer:__
+
+*Nächstes Treffen:* +
+20.10.2021, 18:30 Uhr, Online
+
+__Teilnehmer:__
+
+- Ralf
+- Mika
+- Johannes
+- Eric
+- Szymon
+- Hannes
+- Nelli Rahn (Kunde)
+
+== Bemerkungen
+Erstes Treffen
+
+== Retrospektive des letzten Sprints
+Noch nichts
+
+== Aktueller Stand
+Noch keine Fortschritte 
+
+== Planung des nächsten Sprints
+Gruppenleiter festlegen, Guestbook bearbeiten

@@ -1,0 +1,48 @@
+= Protokoll Gruppe 21
+
+Treffen am 27.10.2021
+
+Ort:      Online +
+Beginn:   18:30 Uhr +
+Ende:     19:00 Uhr
+
+__Schriftführer:__ Hannes Richter
+
+*Nächstes Treffen:* +
+03.11.2021, 18:30 Uhr, Online
+
+__Teilnehmer:__
+//Tabellarisch oder Aufzählung, Kennzeichnung von Teilnehmern mit besonderer Rolle (z.B. Kunde)
+
+- Hannes
+- Mika
+- Eric
+- Johannes
+- Nelli Rahn (Kunde)
+
+== Bemerkungen
+-
+
+== Retrospektive des letzten Sprints
+-Issues für Pflichtenheft erstellt (alle offen)
+
+// See http://asciidoctor.org/docs/user-manual/=tables
+[option="headers"]
+|===
+|Issue |Aufgabe |Status |Bemerkung
+|#1     |Pflichtenheft_Inhalt-Interessensgruppen     |offen   |Angefangen
+|#2     |Pflichtenheft_Systemgrenzen-Top_Level_Architektur     |offen      |Nicht zugeteilt
+|#3     |Pflichtenheft_Anwendungsfälle     |offen     |Nicht zugeteilt
+|#4     |Pflichtenheft_Anforderungen     |offen      |Nicht zugeteilt
+|#5     |Pflichtenheft_GUI-Prototyp      |offen      |Nicht zugeteilt
+|#6     |Pflichtenheft_Datenmodell      |offen     |Nicht zugeteilt
+|===
+
+
+== Aktueller Stand
+-Videoshop Aufgaben werden bearbeitet
+-Pflichtenheft wird bearbeitet
+
+== Planung des nächsten Sprints
+-Videoshop Aufgaben abschließen und präsentieren
+-Pflichtenheft fertigstellen (Issue #1...6)

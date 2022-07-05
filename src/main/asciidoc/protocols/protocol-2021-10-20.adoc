@@ -1,0 +1,36 @@
+= Protokoll Gruppe 21
+
+Treffen am 20.10.2021
+
+Ort:      BigBlueButton
+Beginn:   18:30 Uhr
+Ende:     19:10 Uhr
+
+__Schriftführer:__ Hannes Richter
+
+*Nächstes Treffen:* +
+27.10.2021, 18:30 Uhr, Online
+
+__Teilnehmer:__
+
+- Ralf
+- Mika
+- Johannes
+- Eric
+- Hannes
+- Szymon
+- Nelli Rahn (Kunde)
+
+== Bemerkungen
+- Neue Aufgaben angekündigt
+- Fragen beantwortet
+
+== Retrospektive des letzten Sprints
+- Guestbook bearbeitet
+
+== Aktueller Stand
+- Gruppenleiter bestimmt
+- Guestbook eingearbeitet
+
+== Planung des nächsten Sprints
+- noch keine Issues

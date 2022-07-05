@@ -1,0 +1,90 @@
+= Cross-Testing Feedback
+
+__Durchführende Gruppe:__ 21
+__Anwendung von Gruppe:__ 22
+
+== Getestetes System
+Welche Aufgabe/Problemstellung löst die Anwendung.
+
+=== Allgemein
+* Startseite
+* Registrieren
+* Einloggen
+* Ausloggen
+* Konto
+* Passwort ändern
+
+=== Gast
+* Zimmersuche
+* Terminal
+* Reservierungen
+* Buchungen
+* Saisons
+
+=== Putzkraft
+* Putzplan
+* Urlaubsantrag stellen
+
+=== Manager
+* Saisons
+* Mitarbeitendenverwaltung
+* Reservierungsübersicht
+* Urlaubsanfragenverwaltung
+* Urlaubsantrag stellen
+* Verpflegungspreise
+* Zimmer
+* Stornierungsgebühr
+
+== Fehler-Report
+
+=== Gast
+// See http://asciidoctor.org/docs/user-manual/#tables
+[options="header"]
+|===
+|Pfad |Parameter |Beschreibung |Rückgabe
+| /search | 01.12.2021, 02.12.2021 | Man kann Zimmer in der Vergangenheit buchen. | -
+| /booking | - | Nach Zimmer suchen und auf "buchen" klicken. Buchung wird scheinbar ertsellt, aber Seite kann nicht angezeigt werden. | There was an unexpected error (type=Internal Server Error, status=500).
+| /terminal | - | Der heutige Tag liegt im Zeitraum einer Buchung vom Gast, aber man kann das Terminal nicht benutzen | Sie haben keinen Raum bezogen. Eine Auswahl an Services wird Ihnen hier während Ihrer Zeit in unserem Hotel angezeigt.
+| /terminal | - | Koenigsuite nicht abwaehlbar | There is no action after clicking on Koenigsuite.
+| /reservations | - | Gast kann Reservierungen nicht aufrufen. | There was an unexpected error (type=Internal Server Error, status=500).
+| /booking | - | Gast kann Buchungen nicht aufrufen. | There was an unexpected error (type=Internal Server Error, status=500).
+|===
+
+=== Putzkraft
+[options="header"]
+|===
+|Pfad |Parameter |Beschreibung |Rückgabe
+| /search | - | Putzkraft hat Zugriff auf Zimmersuche? | -
+| /seasons | - | Putzkraft hat Zugriff auf Saisons? | -
+| /rooms | - | Putzkraft hat Zugriff auf Zimmer? | There was an unexpected error (type=Internal Server Error, status=500).
+| /cleaningplan | - | Neu gebuchte Räume werden nicht dem Plutzplan hinzugefügt | -
+|===
+
+=== Manager
+[options="header"]
+|===
+|Pfad |Parameter |Beschreibung |Rückgabe
+| /seasons/add | Prozentsatz: -100 | - | There was an unexpected error (type=Internal Server Error, status=500).
+| /invoice/9? | - | Bei /room-occupancy auf "Rechnung erzeugen" klicken" | There was an unexpected error (type=Internal Server Error, status=500).
+| /board | - | Manager kann Verpfleungspreise nicht abrufen. | There was an unexpected error (type=Internal Server Error, status=500).
+| /cancellationFee | - | Manager kann Stornierungsgebühr nicht abrufen. | There was an unexpected error (type=Internal Server Error, status=500).
+|===
+
+== Sonstiges
+=== Optik der Anwendung
+* Seiten für Mitarbieter sind alle links am Rand orientiert, könnte schöner sein
+
+=== Fehlende Features
+* Statistiken
+* Finanzen
+* Buchungen einsehen und stornieren?
+* Warenkorb für Terminal
+* Warenkorb für Zimmer
+* Benutzerdaten ändern (nicht nur das Passwort)
+* als Manager Zimmer buchen
+
+=== Interaktion mit der Anwendung (Usability)
+
+== Verbesserungsvorschläge
+* Ist man einmal auf der Loginseite kann oder möchte sich aber nicht einloggen kommt man von dieser nicht mehr runter.
+* Nach dem Hinzufuegen von einem zusaetzlichen Manager ist da kein Extra Feld um den neuerstellten Manger von Putzkraeften zu unterscheiden. Vorschlag: einen extra Feld mit Positionbeschreibung in die Tabelle hinzuefuegen.

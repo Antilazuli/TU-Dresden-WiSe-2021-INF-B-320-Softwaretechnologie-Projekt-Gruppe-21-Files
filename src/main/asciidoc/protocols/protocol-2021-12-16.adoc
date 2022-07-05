@@ -1,0 +1,54 @@
+= Protokoll Gruppe 21
+
+Treffen am 16.12.2021
+
+Ort:      Online +
+Beginn:   16:40 Uhr +
+Ende:     16:55 Uhr
+
+__Schriftführer:__
+
+*Nächstes Treffen:* +
+13.01.2022, 16:40 Uhr, Online
+
+__Teilnehmer:__
+
+- Szymon
+- Hannes
+- Mika
+- Eric
+- Johannes
+- Nelli Rahn (Kunde)
+
+== Bemerkungen
+-
+
+== Retrospektive des letzten Sprints
+
+[option="headers"]
+|===
+|Issue |Aufgabe |Status |Bemerkung
+|55 |Finanzen             |closed    |closed
+|56 |Statistiken          |closed    |closed
+|57 |Halb/Vollpension     |closed    |closed
+|58 |Saisonpreise         |closed    |closed
+
+|===
+
+
+== Aktueller Stand
+-Musskriterien erfüllt
+
+== Planung des nächsten Sprints
+-Crosstesting
+-CSS finalisieren
+-Backround weiter bearbeiten
+
+[option="headers"]
+|===
+|Issue |Titel |Beschreibung |Verantwortlicher |Status
+|51    |Tests       	 |Tests schreiben                               |Alle          |open
+|52    |Clean Code     |Code aufräumen                                |Alle          |open
+|54    |Crosstesting   |Code der anderen Gruppe auf Bugs überprüfuen  |All           |open
+|55    |Design         |Frontend finalisieren                         |Ralf & Hannes |open
+|===

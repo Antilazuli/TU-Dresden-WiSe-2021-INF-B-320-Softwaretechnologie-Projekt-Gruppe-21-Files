@@ -1,0 +1,57 @@
+= Protokoll Gruppe 21
+
+Treffen am 20.01.2021
+
+Ort:      Online +
+Beginn:   16:40 Uhr +
+Ende:     16:57 Uhr
+
+__Schriftführer:__
+Hannes Richter
+
+*Umfrage:* +
+27.01.2021, 16:40 Uhr, Online
+
+__Teilnehmer:__
+
+- Szymon
+- Mika
+- Eric
+- Johannes
+- Nelli Rahn (Kunde)
+
+== Bemerkungen
+- Validierund und Testing noch nicht finalisiert
+- Entwicklerdokumentation überarbeiten
+- Präsentation vorbereiten
+
+== Retrospektive des letzten Sprints
+*Issue referenziert die Issue ID von GitHub*
+// Wie ist der Status der im letzten Sprint erstellten Issues/veteilten Aufgaben?
+
+// See http://asciidoctor.org/docs/user-manual/=tables
+[option="headers"]
+|===
+|Issue |Aufgabe |Status |Bemerkung
+|#69     |Personal löschen    |closed      |/
+|#70     |Personal kann Daten Bearbeiten      |closed      |/
+|#72     |Kundenbewertung      |closed      |/
+|===
+
+
+== Aktueller Stand
+- Validirung unvollständig
+- Tests unvollständig
+- Entwicklerdokumentation noch nicht abgeschlossen
+
+
+== Planung des nächsten Sprints
+*Issue referenziert die Issue ID von GitHub*
+
+// See http://asciidoctor.org/docs/user-manual/=tables
+[option="headers"]
+|===
+|Issue |Titel |Beschreibung |Verantwortlicher |Status
+|#73     |Validierung Zimmersuche      |Zimmersuche wird validiert      |alle |in Bearbeitung
+|#74     |Validierung Saison      |Saisonmodel wird validiert      |alle |in Bearbeitung
+|===
