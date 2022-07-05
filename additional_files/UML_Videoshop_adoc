@@ -1,0 +1,72 @@
+== Data Model
+
+=== Class Diagram
+The (analysis) class diagram is supposed to give an overview of the domain in the context of the system, which shall be developed in the scope of this project.
+
+[small]_Note: The domain model is supposed to explain the concepts and terms of the domain and their relationships. Please, try to avoid technical terms or implementation knowledge._
+
+[[AKD]]
+image::./diagrams/images/aUML_hotel.svg[Class diagram, 100%, 100%, pdfwidth=100%, title= "Domain model of {project_name}", align=center]
+
+=== Classes and Enumerations
+The following table gives an overview of the classes/enumerations used in the domain model.
+Therefore, this section is a subset of the <<Glossary, glossary>> and shall be used to provide every stakeholder a common understanding of central terms and concepts of the domain of the system.
+
+:Videoshop_Description: Central class of the system representing the videoshop itself.
+//Note: you could do it like this, but this might not work with mutli-line texts. Consult the documentation for additional information
+
+// See http://asciidoctor.org/docs/user-manual/#tables
+[options="header", cols="1h, 4"]
+[[classes_enumerations]]
+|===
+|Class/Enumeration      |Description
+|Hotel				| {Hotelshop_Description}
+ServiceCart                   | A service cart is a temporary storage for services a guest intends to book. If a customer decides to book his selected rooms, a Booking is created.
+|Image                | A image is a digital thumbnail that visually represent a room.
+|RoomCatalog                 | A room catalog is a group of rooms with a common feature.
+|RoomInventory              | An inventory represents a storage for the hotel. Can be seen as a warehouse in this project.
+|Item              | Represents the quantity of rooms in the cart.
+|Movie              | A type of product that can be obtained from the service inventory.		
+|Food              | A type of product that can be obtained from the service inventory.			
+|Drink              | A type of product that can be obtained from the service inventory.		
+|Game              | A type of product that can be obtained from the service inventory.		
+|Room                 | General part of the hotel.
+|Suite                 | A suite is a possible type of room, used to group rooms in the catalog.
+|1 Bed                    | A 1 bed room is a possible type of room, used to group rooms in the catalog.
+|2 Bed                    | A 2 bed room is a possible type of room, used to group rooms in the catalog.
+|ServiceInventory              | An inventory represents a storage for the hotel. Can be seen as a warehouse in this project.
+|Product              | Part of the service inventory.
+|Hotel              | The main part of the project.
+|Booking                 |A booking is used to represent what a guest of the hotel intends to book from the hotel. An order can have a varying status to symbolize the current step at which the order is processed.
+|Bill            | A bill is used to represent what a guest of the hotel has to pay. A bill can have a varying status to symbolize the current step at which the bill is processed.
+|Roster            | A plan which the staff has to adhere to.
+|Manager               | A user that is registered as an administrator/boss of the videoshop.
+|VacationRequest               | A request, posed by the staff and agreed upon by the manager.
+|RoomCart                   |A Cart is a temporary storage for rooms a guest intends to book. If a customer decides to book his selected rooms, a booking is created.
+|Item              | Represents the number of rooms in the cart.
+|User              | General representation of a real person.
+|Registered User                   |General representation of a real person, which has a representation in the system. This representation is only created if a user registers with the system, and only used if he or she authenticates.
+|Guest                  | A user that is registered as a guest of the hotel.
+|Staff                  | Service personal of the hotel.
+|Status[VacationRequest]            | This status represents the current processing step of the vacation request it belongs to. +
+_GRANTED_: The request has been granted by the manager. +
+_CANCELLED_: The request has been denied by the manager.
+|Status[Room]            | This status represents the current processing step of the room it belongs to. +
+_BOOKED_: The room has been booked. +
+_FREE_: The room is not occupied. +
+_NOT_AVAILABLE_: The room is not usable at the moment.
+|Status[Bill]            | This status represents the current processing step of the bill it belongs to. +
+_OPEN_: The bill is still pending. +
+_PAYED_: The bill is payed. +
+_NOT_PAYED_: The bill is not payed.
+|Status[Booking]            | This status represents the current processing step of the booking it belongs to. +
+_OPEN_: The booking is still open. +
+_CHECKED_IN_: The guest has already checked in. +
+_CHECKED_OUT_: The guest has already checked out. +
+_CANCELLED_: The booking was canceled by the guest.
+|CleaningStatus[Room]            | This status represents the current processing step of the cleaning process of a specific room. +
+_NOT_CLEANED_: The room hasn't been cleaned yet. +
+_CLEANED_: The room has been cleaned. +
+_IN_PROGRESS_: The room is currently cleaned.
+|InventoryItem              | Represents the quantity of a disc in the inventory.
+|===
