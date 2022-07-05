@@ -1,0 +1,40 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout.html}">
+
+<head>
+    <title>Dienstplan</title>
+</head>
+
+<body>
+    <div class="ui_container">
+        <section layout:fragment="content">
+            <h1 class="content_header">Dienstplan</h1>
+            <div class="roster">
+                <table>
+                    <thead>
+                        <tr>
+                            <th th:each=" day : ${days}" th:text="${day}">day</th>
+                        </tr>
+                    <tbody>
+                        <tr>
+                            <td th:each=" workingDay : ${workingDays}">
+                                <table id="inner">
+                                    <tbody>
+                                        <tr id="innercell" th:each=" room : ${workingDay.getRooms()}">
+                                            <td th:text="${room}">room</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

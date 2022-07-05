@@ -1,0 +1,87 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link th:href="@{/resources/css/style.css}" rel="stylesheet" href="../static/resources/css/style.css"
+        type="text/css" />
+    <title>Layout-Page</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="loginLine">
+            <div class="loginLinks">
+                <a class="headerLink" sec:authorize="!isAuthenticated()" th:href="@{/login}">Login |</a>
+                <a class="headerLink" sec:authorize="!isAuthenticated()" th:href="@{/register}">Register</a>
+                <a class="headerLink" sec:authorize="isAuthenticated()" th:href="@{/logout}">Logout</a>
+            </div>
+        </div>
+        <!-- Logo in extra div Container, nicht im header, dann immer selbe stelle -->
+        <svg>
+            <circle cx="50%" cy="50%" r="40" />
+        </svg>
+    </div>
+    <div>
+        <p id="welcomeMessage" sec:authorize="isAuthenticated()" th:if="${member != null}"
+            th:text="${'Willkommen ' + member.getName()}">Hallo Nutzer</p>
+    </div>
+    <div class="navbar" sec:authorize="!isAuthenticated()">
+        <div class="navbox"><a th:href="@{/}">Home</a><br></div>
+        <div class="navbox"><a th:href="@{/rooms}">Zimmerübersicht</a><br></div>
+        <div class="navboxbot"><a th:href="@{/ratings}">Bewertungen</a><br></div>
+    </div>
+    <div class="navbar" id="manager" sec:authorize="hasRole('MANAGER')">
+        <div class="navbox"><a th:href="@{/manager/rooms}">Zimmer</a><br></div>
+        <div class="navbox"><a th:href="@{/manager/bookings}">Buchungen</a><br></div>
+        <div class="navbox"><a th:href="@{/manager/guests}">Gäste</a><br></div>
+        <div class="navbox"><a th:href="@{/manager/finances}">Finanzen</a><br></div>
+        <div class="navbox"><a th:href="@{/manager/seasons}">Saisons</a><br></div>
+        <input type="checkbox" id="topdownControl" />
+        <label id="topdownlabel" for="topdownControl">
+            <div class="navbox"><span id="navpfeil">&#5125;</span>Personal</div>
+            <div class="topdown">
+                <div class="navboxtopdownfirst"><a th:href="@{/manager/staffs}">Mitarbeiter</a><br></div>
+                <div class="navboxtopdownmiddle"><a th:href="@{/manager/roster}">Dienstplan</a><br></div>
+                <div class="navboxtopdownany"><a th:href="@{/manger/vacation-requests}">Urlaubsanträge</a><br></div>
+            </div>
+        </label>
+        <div class="navbox"><a th:href="@{/manager/statistics}">Statistiken</a><br></div>
+        <div class="navboxbot"><a th:href="@{/ratings}">Bewertungen</a><br></div>
+    </div>
+    <div class="navbar" id="staff" sec:authorize="hasRole('STAFF')">
+        <div class="navbox"><a th:href="@{/staff}">Persönliche Daten</a><br></div>
+        <div class="navbox"><a th:href="@{/staff/roster}">Dienstplan</a><br></div>
+        <div class="navboxbot"><a th:href="@{/staff/vacation-requests}">Urlaubsanträge</a><br></div>
+    </div>
+    <div class="navbar" id="guest" sec:authorize="hasRole('GUEST')">
+        <div class="navbox"><a th:href="@{/}">Home</a><br></div>
+        <div class="navbox"><a th:href="@{/bookings}">Buchungen</a><br></div>
+        <div class="navbox"><a th:href="@{/guest}">persönliche Daten</a><br></div>
+        <div class="navbox"><a th:href="@{/rooms}">Zimmerübersicht</a><br></div>
+        <div class="navbox" sec:authorize="hasRole('SERVICE')"><a th:href="@{/roomservice}">Zimmerservice</a><br></div>
+        <div class="navboxbot"><a th:href="@{/ratings}">Bewertungen</a><br></div>
+    </div>
+    <div class="ui_container">
+        <section layout:fragment="content"></section>
+        <p th:text=${errorMessage}>&nbsp</p>
+    </div>
+    <div class="contentgab"></div>
+    <footer>
+        <div class="footerContent">
+            <div class="footerLinks">
+                <hr class="menucut" id="footercut">
+                <a href="#">Über uns</a><br>
+                <a href="#">Impressum</a><br>
+                <a href="#">Kontakt</a><br>
+            </div>
+            <div class="socialmedia">
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout.html}">
+
+<head>
+    <title>Register</title>
+</head>
+
+<body id="register_ui">
+    <div class="ui_container">
+        <section layout:fragment="content">
+            <div class="loginForm">
+                <form role="form" th:action="@{/register}" th:object="${registrationForm}" method="post">
+                    <div class="ui_negative_message" th:if="${#fields.hasErrors('*')}">
+                        <p>Einige Angaben sind nicht korrekt.</p>
+                        <br>
+                    </div>
+                    <input type="text" id="firstname" name="firstname" placeholder="Vorname" th:field="*{firstname}" th:errorclass="fieldError"/>
+                    <div class="ui_negative_message" th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}"></div>
+
+                    <input type="text" id="lastname" name="lastname" placeholder="Nachname" th:field="*{lastname}" th:errorclass="fieldError"/>
+                    <div class="ui_negative_message" th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}"></div>
+
+                    <input type="email" id="email" name="email" placeholder="E-mail" th:field="*{email}" th:errorclass="fieldError"/>
+                    <div class="ui_negative_message" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+
+                    <input type="password" id="password" name="password" placeholder="Passwort" th:field="*{password}" th:errorclass="fieldError"/>
+                    <div class="ui_negative_message" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+
+                    <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Telefonnummer" th:field="*{phoneNumber}" th:errorclass="fieldError"/>
+                    <div class="ui_negative_message" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></div>
+
+                    <input type="text" id="creditCardNumber" name="creditCardNumber" placeholder="Kreditkartennummer" th:field="*{creditCardNumber}" th:errorclass="fieldError"/>
+                    <div class="ui_negative_message" th:if="${#fields.hasErrors('creditCardNumber')}" th:errors="*{creditCardNumber}"></div>
+
+                    <br>
+                    <button class="button" type="submit">Register</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

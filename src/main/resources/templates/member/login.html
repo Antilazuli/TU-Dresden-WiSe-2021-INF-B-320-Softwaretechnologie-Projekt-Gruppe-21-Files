@@ -1,0 +1,31 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout.html}">
+
+<head>
+    <title>Login</title>
+</head>
+
+<body id="login_ui">
+    <div class="ui_container">
+        <section layout:fragment="content">
+            <div class="loginForm">
+                <form role="form" th:action="@{/login}" method="post">
+                    <div class="field">
+                        <input type="email" id="username" name="username" placeholder="E-mail" required="required" />
+                    </div>
+                    <div class="field">
+                        <input type="password" id="password" name="password" placeholder="Passwort"
+                            required="required" />
+                    </div>
+                    <br>
+                    <button class="button" type="submit">Login</button>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

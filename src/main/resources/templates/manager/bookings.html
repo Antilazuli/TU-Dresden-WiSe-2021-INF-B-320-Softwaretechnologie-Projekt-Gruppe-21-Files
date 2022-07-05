@@ -1,0 +1,46 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout.html}">
+
+<head>
+    <title>Buchungen</title>
+</head>
+
+<body>
+    <div class="ui_container">
+        <section layout:fragment="content">
+            <div class="catalog">
+                <h1 class="content_header">Buchungen</h1>
+                </br>
+                <div>
+                    <p th:if="${bookings.isEmpty()}">Keine Buchungen</p>
+                    <table th:if="${!bookings.isEmpty()}">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Von</th>
+                                <th>Bis</th>
+                                <th>Status</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each=" booking : ${bookings}">
+                                <td th:text="${booking.getId()}">id</td>
+                                <td th:text="${booking.getStart()}">id</td>
+                                <td th:text="${booking.getEnd()}">id</td>
+                                <td th:text="${booking.getState()}">id</td>
+                                <td><a th:href="@{/manager/booking/{id}(id=${booking.getId()})}">details</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </br>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

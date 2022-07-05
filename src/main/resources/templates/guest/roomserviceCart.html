@@ -1,0 +1,58 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout.html}">
+
+<head>
+    <title>Warenkorb</title>
+</head>
+
+<body>
+    <div class="ui_container">
+        <section layout:fragment="content">
+            <div class="catalog">
+                <h1 class="content_header">Warenkorb</h1>
+                </br>
+                <p th:if="${cart.isEmpty()}">Warenkorb leer</p>
+                <div th:if="${!cart.isEmpty()}">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Anzahl</th>
+                                <th>Preis</th>
+                                <th>Artikel entfernen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="item : ${cart}">
+                                <td th:text="${item.productName}"></td>
+                                <td th:text="${item.quantity}"></td>
+                                <td th:text="${{item.price}}"></td>
+                                <td>
+                                    <form role="form" th:action="@{/roomservice/removeArticle}" method="post">
+                                        <input id="id" name="id" type="hidden" th:value="${item.id}" />
+                                        <button type="submit">Entfernen</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Gesamtpreis des Warenkorbs:</p>
+                    <p th:text="${cart.getPrice()}"></p>
+                    <form role="form" th:action="@{/roomservice/checkout}" method="post">
+                        <button type="submit">Kaufen</button>
+                    </form>
+                    <form role="form" th:action="@{/roomservice/removeAllArticle}" method="post">
+                        <button type="submit">Warenkorb löschen</button>
+                    </form>
+                </div>
+                </br>
+                <p><a th:href="@{/roomservice}">Zurück</a></p>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

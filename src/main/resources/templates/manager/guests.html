@@ -1,0 +1,41 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout.html}">
+
+<head>
+    <title>Gäste Übersicht</title>
+</head>
+
+<body>
+    <div class="ui_container">
+        <section layout:fragment="content">
+            <div class="catalog">
+                <h1 class="content_header">Gäste Übersicht</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Vorname</th>
+                            <th>Nachname</th>
+                            <th>E-Mail</th>
+                            <th>Telefonnummer</th>
+                            <th>eingecheckt</th>
+                        </tr>
+                    <tbody>
+                        <tr th:each=" guest : ${guests}">
+                            <td th:text="${guest.getFirstname()}">name</td>
+                            <td th:text="${guest.getLastname()}">name</td>
+                            <td th:text="${guest.getEmail()}">email</td>
+                            <td th:text="${guest.getPhoneNumber()}">number</td>
+                            <td th:if="${guest.isCheckedIn()}">ja</td>
+                            <td th:if="${!guest.isCheckedIn()}">nein</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

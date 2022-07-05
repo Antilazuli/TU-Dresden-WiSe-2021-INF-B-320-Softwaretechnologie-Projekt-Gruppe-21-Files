@@ -1,0 +1,28 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout.html}">
+
+<head>
+    <title>Daten ändern</title>
+</head>
+
+<body>
+    <div class="ui_container">
+        <section layout:fragment="content">
+            <h1>Daten ändern</h1>
+            <form role="form" th:action="@{/updateStaff}" th:object="${MemberForm}" method="post">
+                <input type="text" id="firstname" name="firstname" placeholder="Vorname"
+                    th:value="${staff.getFirstname()}" />
+                <input type="text" id="lastname" name="lastname" placeholder="Nachname"
+                    th:value="${staff.getLastname()}" />
+                <input type="password" id="newPassword" name="newPassword" placeholder="Neues Passwort" />
+                <br>
+                <button type="submit">bestätigen</button>
+            </form>
+        </section>
+    </div>
+</body>
+
+</html>

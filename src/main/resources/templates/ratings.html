@@ -1,0 +1,36 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout.html}">
+
+<head>
+    <title>Bewertungen</title>
+</head>
+
+<body>
+    <div class="ui_container">
+        <section layout:fragment="content">
+            <div class="catalog">
+                <h1 class="content_header">Bewertungen <span th:if="${average != null}"
+                        th:text="${average}">5</span><span> </span><span th:if="${average != null}">&starf;</span></h1>
+                <p th:if="${authorize}"><a th:href="@{/add-rating}">Bewertung erstellen</a></p>
+                <br>
+                <div th:each="rating : ${ratings}">
+                    <div class="rating">
+                        <div th:text="${rating.getDate()}">DateTime</div>
+                        <br>
+                        <div>
+                            <span th:text="${rating.getRating()}">5</span>
+                            <span>&starf;</span>
+                        </div>
+                        <div th:text="${rating.getText()}">Kommentar</div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

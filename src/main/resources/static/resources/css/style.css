@@ -1,0 +1,496 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/**LAYOUT**/
+
+	/*HEADER*/
+	.loginLine {
+
+		background-color: rgb(37, 37, 37);
+		width: 60%;
+		margin-left: 20%;
+		text-align: right;
+		padding: 4px;
+		border-radius: 0px 0px 5px 5px;
+	}
+	
+	.headerLink {
+	
+		transition: 0.2s;
+	}
+	
+	.headerLink:hover {
+	
+		color: gold;
+	}
+	
+	.header {
+	
+		background-image: url("../img/pexels-chris-goodwin-32870.jpg");
+		background-position:top;
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: 300px;
+		background-attachment: fixed;
+		text-align: center;
+	}
+
+	/*NAVIGATION*/
+	.navbar {
+
+		margin-left: 4%;
+		width: 12%;
+		float: left;
+		background-color: rgb(37, 37, 37);
+	}
+	
+	.navbox, .navboxbot {
+	
+		border-bottom-style: none;
+		position: relative;
+		margin: 4% 0%;
+	}
+	
+	.navbox a, .navbox, .navboxbot a {
+	
+		font-size: 25px;
+	}
+
+	.topdown {
+
+		position: absolute;
+		visibility: hidden;
+	}
+	
+	#navpfeil {
+	
+		margin: 0px 3px;
+		display: inline-block;
+		transition: 0.2s;
+	}
+	
+	#topdownControl:checked + label .navbox #navpfeil{
+	
+		transform: rotate(90deg);
+	}
+	
+	.navboxtopdownfirst, .navboxtopdownmiddle, .navboxtopdownany {
+	
+		border-top: none;
+		border-bottom-style: none;
+		margin: 4% 0%;
+		margin-left: 5%;
+	}
+	
+	.navboxtopdownfirst {
+	
+		border-top: none;
+	}
+	
+	#topdownControl {
+		
+		display: none;
+	}
+	
+	#topdownControl:checked + label .topdown{
+	
+		position: relative;
+		visibility: visible;
+	}
+	
+	.bookingMenu {
+	
+		background-color: teal;
+	}
+
+	/*BODY*/
+	body {
+		font: 20px Helvetica, Arial, sans-serif;
+		color: rgb(233, 233, 233);
+		background-image: url("../img/pexels-chris-goodwin-32870.jpg");
+		background-position:top;
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: 600px;
+		background-attachment: fixed;
+	}
+	
+	body a {
+	
+		text-decoration: none;
+		color: rgb(233, 233, 233);
+		margin: 3px;
+	}
+
+	.ui_container {
+
+		background-color: rgba(255,255,255,.1);
+		backdrop-filter: blur(5px);
+		width: 60%;
+		margin-left: 4%;
+		display: inline-block;
+		padding: 2%;
+	}
+
+	/*FOOTER*/
+	footer {
+
+		background-color: rgba(255, 255, 255, .05);
+		backdrop-filter: blur(5px);
+		transition: 0.2s;
+	}
+	
+	footer:hover {
+	
+		background-color: rgb(37, 37, 37);
+	}
+	
+	.footerContent {
+	
+		width: 60%;
+		margin-left: 20%;
+		padding: 2% 0%;
+	}
+	
+	.footerLinks a {
+	
+		display: inline-block;
+		transition: 0.2s;
+	}
+	
+	.footerLinks a:hover {
+	
+		color: gold;
+	}
+	
+	#footercut {
+		display: block;
+		margin-bottom: 2%;
+	}
+
+/**INDEX**/
+#index_ui .ui_container {
+
+	padding: 0% !important;
+	overflow: hidden;
+	background-color: transparent !important;
+}
+
+.contentgab {
+
+	width: 100%;
+	height: 150px;
+	clear: both;
+}
+
+#index_ui .ui_container .o1-bed .t2-bed .suite {
+
+	margin: 0% !important;
+}
+
+.overflowBorderMiddle {
+
+	width: 34%;
+	height: 450px;
+	float: left;
+	overflow: hidden;
+}
+
+.overflowBorder {
+
+	width: 33%;
+	height: 450px;
+	float: left;
+	overflow: hidden;
+}
+
+.imgLink {
+
+	text-align: center;
+	padding-top: 50%;
+	height: 100%;
+	background-color:black;
+	opacity: 0;
+	transition: 0.2s;
+	position: relative;
+}
+
+.spanLink {
+
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.o1-bed {
+
+	height: 450px;
+	background-image: url("../img/pexels-pixabay-271618.jpg");
+	background-position: right;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: 0.2s;
+}
+
+.t2-bed {
+
+	height: 450px;
+	background-image: url("../img/pexels-pixabay-262048.jpg");
+	background-position:top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: 0.2s;
+}
+
+.suite {
+
+	height: 450px;
+	background-image: url("../img/pexels-pixabay-161758.jpg");
+	background-position:top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: 0.2s;
+}
+
+.o1-bed:hover {
+
+	transform:scale(1.2);
+}
+
+.o1-bed:hover .imgLink {
+
+	opacity: 0.7;
+	
+}
+
+.t2-bed:hover {
+
+	transform:scale(1.2);
+}
+
+.t2-bed:hover .imgLink {
+
+	opacity: 0.7;
+}
+
+.suite:hover {
+
+	transform:scale(1.2);
+}
+
+.suite:hover .imgLink {
+
+	opacity: 0.7;
+}
+
+/**OTHERS**/
+
+.unvisibleBlock {
+
+	visibility: visible;
+	margin-left: 4%;
+	width: 12%;
+	display: inline-block;
+}
+
+#indexHeader {
+
+	height: 600px !important;
+}
+
+#welcomeMessage {
+
+	text-align: center;
+	background-color: grey;
+}
+
+.loginForm {
+
+	padding: 2%;
+	text-align: center;
+	background-color: rgb(37, 37, 37);
+}
+
+#staffregister {
+
+	text-align: unset;
+}
+
+#loginHeaderline {
+
+	text-align: center;
+	margin-bottom: 3%;
+}
+
+input {
+
+    background-color: rgba(255, 255, 255, .05);
+    border: 1px solid whitesmoke;
+    text-align: center;
+    color: white;
+    transition: all 1s;
+    width: 50%;
+    padding: 2%;
+	border: none;
+    outline: none;
+    margin-bottom: 1%;
+}
+
+input::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+input:focus {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.button {
+
+    width: 20%;
+    font-size: 1.1vw;
+    color: white;
+    transition: all 1.0s;
+    background-color: rgba(255, 255, 255, .01);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    border: none;
+    padding: 1%;
+}
+
+.button:hover {
+
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.contentA_button {
+
+	width: 20%;
+    font-size: 1.1vw;
+    color: white;
+    transition: all 1.0s;
+    background-color: rgba(255, 255, 255, .01);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    border: none;
+    padding: 1%;
+	margin-bottom: 1%;
+}
+
+.contentA_button:hover {
+
+	background-color: rgba(255, 255, 255, .2);
+}
+
+.content table thead tr th {
+	
+	background-color: #FFFFFF;
+	width: 10%;
+}
+
+.content_header  {
+
+	color: rgb(233, 233, 233);
+	margin-bottom: 1%;
+	background-color: rgb(37, 37, 37);
+	padding: 1%;
+}
+
+.catalog {
+	color: black;
+}
+
+.catalog table thead tr th {
+
+	width: 5%;
+	font-size: 12px;
+}
+
+table, th, td {
+
+	border-collapse: collapse;
+	padding: 0.5%;
+}
+
+thead tr th {
+
+	color: rgb(233, 233, 233);
+	background-color: rgb(37, 37, 37);
+	border: 1px solid rgb(233, 233, 233);
+}
+
+thead tr {
+
+	color: rgb(37, 37, 37);
+}
+
+tbody tr {
+
+	color: rgb(233, 233, 233);
+}
+
+tbody tr:nth-child(even) {
+
+	background-color: rgb(75, 75, 75);
+}
+
+tbody tr:nth-child(odd) {
+
+	background-color: rgb(50, 50, 50);
+}
+
+#footercut {
+	display: block;
+	margin-bottom: 2%;
+}
+
+.roster {
+	color: white;
+}
+
+.roster table {
+
+	width: 100%;
+	
+}
+
+.roster table tbody td{
+	vertical-align: top;
+}
+
+#inner {
+
+	width: 100%;
+	border-style: hidden;
+	border-bottom-style: solid;
+}
+
+#innercell{
+	text-align: center;
+	height: 50px;
+}
+
+.roster table thead tr th {
+
+	background-color: rgb(42, 85, 31);
+}
+
+.filterLabel {
+
+	color: rgb(233, 233, 233);
+}
+
+.rating {
+
+	color: rgb(233, 233, 233);
+	background-color: rgb(37, 37, 37);
+	padding: 1%;
+}
+
+input.fieldError {
+    border-color:red !important;
+    box-shadow:0 0 10px red !important;
+}

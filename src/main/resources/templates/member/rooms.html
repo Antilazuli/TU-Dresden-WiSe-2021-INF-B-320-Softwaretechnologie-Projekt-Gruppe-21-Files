@@ -1,0 +1,88 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout.html}">
+
+<head>
+    <title>Räume</title>
+</head>
+
+<body>
+    <div class="ui_container">
+        <section layout:fragment="content">
+            <div class="catalog">
+                <h1 class="content_header">Räume</h1>
+                </br>
+                <a th:href="@{/rooms/cart}">Warenkorb</a>
+                <br>
+                <form role="form" th:action="@{/setDates}" th:object="${FilterForm}" method="post">
+                    <label for="start">Von: </label>
+                    <input id="startString" name="startString" type="date" th:value="${start}" />
+                    <label for="end">Bis: </label>
+                    <input id="endString" name="endString" type="date" th:value="${end}" />
+                    <br>
+                    <select id="types" name="types">
+                        <option th:text="Alle" th:value="ALL" selected></option>
+                        <option th:each="type : ${types}" th:text="${type}" th:value="${type.name()}"
+                            th:selected="${type == selectedType}"></option>
+                    </select>
+                    <br>
+                    <input type="checkbox" id="equipments" name="equipments" th:each="equipment : ${equipments}"
+                        th:checked="${equipment.getValue()}" th:text="${equipment.getKey()}"
+                        th:value="${equipment.getKey().name()}" />
+                    <br>
+                    <button type="submit" value="Submit">Suchen</button>
+                </form>
+                </br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th><a th:href="@{/rooms/sort/type}">Zimmer</a></th>
+                            <th><a th:href="@{/rooms/sort/equipment}">Ausstattung</a></th>
+                            <th><a th:href="@{/rooms/sort/price}">Preis</a></th>
+                            <th>Buchen</th>
+                            <th>Details</th>
+                        </tr>
+                    <tbody>
+                        <tr th:each=" room : ${rooms.keySet()}">
+                            <td th:text="${room.getName()}">name</td>
+                            <td th:text="${room.getType()}">type</td>
+                            <td>
+                                <table>
+                                    <tbody>
+                                        <tr th:each=" equipment : ${room.getEquipments()}">
+                                            <td th:text="${equipment}">ausstattung</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td th:text="${rooms.get(room)}">price</td>
+                            <td>
+                                <form role="form" th:action="@{/addRoom/{id}(id=${room.getId()})}"
+                                    th:object=" ${PriceForm}" method="post">
+                                    <input id="price" name="price" type="hidden" th:value="${rooms.get(room)}" />
+                                    <input id="startString" name="startString" type="hidden" th:value="${start}" />
+                                    <input id="endString" name="endString" type="hidden" th:value="${end}" />
+                                    <button type="submit">Hinzufügen</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form role="form" th:action="@{/room/{id}(id=${room.getId()})}" th:object="${PriceForm}"
+                                    method="post">
+                                    <input id="price" name="price" type="hidden" th:value="${rooms.get(room)}" />
+                                    <input id="startString" name="startString" type="hidden" th:value="${start}" />
+                                    <input id="endString" name="endString" type="hidden" th:value="${end}" />
+                                    <button type="submit">details</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

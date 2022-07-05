@@ -1,0 +1,46 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout.html}">
+
+<head>
+    <title>Saison Übersicht</title>
+</head>
+
+<body>
+    <div class="ui_container">
+        <section layout:fragment="content">
+            <div class="catalog">
+                <h1 class="content_header">Saison Übersicht</h1>
+                </br>
+                <a th:href="@{/manager/season/add}">Neuen Saison erstellen</a>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Aufschlag in %</th>
+                            <th>Startdatum</th>
+                            <th>Enddatum</th>
+                            <th></th>
+                        </tr>
+                    <tbody>
+                        <tr th:each=" season : ${seasons}">
+                            <td th:text="${season.getName()}">name</td>
+                            <td th:text="${season.getPercentage()}">value</td>
+                            <td th:text="${season.getStart()}">start</td>
+                            <td th:text="${season.getEnd()}">end</td>
+                            <td>
+                                <form role="form" th:action="@{/removeSeason/{id}(id=${season.getId()})}" method="post">
+                                    <button type="submit">löschen</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

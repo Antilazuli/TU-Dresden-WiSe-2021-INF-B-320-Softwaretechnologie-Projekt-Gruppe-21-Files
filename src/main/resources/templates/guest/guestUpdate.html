@@ -1,0 +1,35 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout.html}">
+
+<head>
+    <title>Nutzerdaten ändern</title>
+</head>
+
+<body id="register_ui">
+    <div class="ui_container">
+        <section layout:fragment="content">
+            <div class="loginForm">
+                <form role="form" th:action="@{/updateGuest}" th:object="${GuestEditForm}" method="post">
+                    <input type="text" id="firstname" name="firstname" placeholder="Vorname"
+                        th:value="${guest.getFirstname()}" />
+                    <input type="text" id="lastname" name="lastname" placeholder="Nachname"
+                        th:value="${guest.getLastname()}" />
+                    <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Telefonnummer"
+                        th:value="${guest.getPhoneNumber()}" />
+                    <input type="text" id="creditCardNumber" name="creditCardNumber" placeholder="Kreditkartennummer"
+                        th:value="${guest.getCreditCardNumber()}" />
+                    <input type="password" id="newPassword" name="newPassword" placeholder="neues Passwort" />
+                    <input type="password" id="repPassword" name="repPassword" placeholder="Passwort wiederholen" />
+                    <br>
+                    <button class="button" type="submit">bestätigen</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

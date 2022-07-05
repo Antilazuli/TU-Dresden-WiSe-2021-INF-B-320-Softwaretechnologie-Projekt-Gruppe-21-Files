@@ -1,0 +1,38 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout.html}">
+
+<head>
+    <title>Urlaubsantrag einreichen</title>
+</head>
+
+<body>
+    <div class="ui_container">
+        <section layout:fragment="content">
+            <h1>Urlaubsantrag einreichen</h1>
+            <form role="form" th:action="@{/staff/addVacationRequest}" th:object="${vacationForm}" method="post">
+                <div class="field">
+                    <label for="start">Von: </label>
+                    <input id="start" name="start" type="date" th:field="*{start}" th:errorclass="fieldError" />
+                    <div class="ui negative message" th:if="${#fields.hasErrors('start')}" th:errors="*{start}"></div>
+                </div>
+                <div class="field">
+                    <label for="end">Bis: </label>
+                    <input id="end" name="end" type="date" th:field="*{end}" th:errorclass="fieldError" />
+                    <div class="ui negative message" th:if="${#fields.hasErrors('end')}" th:errors="*{end}"></div>
+                </div>
+                <br>
+                <div class="field">
+                    <label for="comment">Anmerkung: </label><br>
+                    <input id="comment" name="comment" type="text" th:field="*{comment}" />
+                </div>
+                <br>
+                <button class="button" type="submit">absenden</button>
+            </form>
+        </section>
+    </div>
+</body>
+
+</html>

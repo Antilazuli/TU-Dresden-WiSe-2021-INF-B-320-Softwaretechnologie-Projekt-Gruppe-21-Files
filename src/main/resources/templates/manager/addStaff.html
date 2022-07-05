@@ -1,0 +1,59 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout.html}">
+
+<head>
+    <title>Personal registrieren</title>
+</head>
+
+<body>
+    <div class="ui_container">
+<<<<<<< HEAD:src/main/resources/templates/register.html
+        <div class="catalog">
+            <div class="loginForm">
+                <form role="form" th:action="@{/register}" th:object="${registrationForm}" method="post">
+                    <div class="field"><input id="firstname"        name="firstname"            type="text"         required="required" th:field="*{firstname}"         placeholder="Vorname" /></div>
+                    <div class="field"><input id="lastname"         name="lastname"             type="text"         required="required" th:field="*{lastname}"          placeholder="Nachname" /></div>
+                    <div class="field"><input id="email"            name="email"                type="email"        required="required" th:field="*{email}"             placeholder="Email"/></div>
+                    <div class="field"><input id="phonenumber"      name="phonenumber"          type="text"         required="required" th:field="*{phonenumber}"       placeholder="Telefonnummer" /></div>
+                    <div class="field"><input id="creditcardnumber" name="creditcardnumber"     type="text"         required="required" th:field="*{creditcardnumber}"  placeholder="Kreditkartennummer" /></div>
+                    <div class="field"><input id="password"         name="password"             type="password"     required="required" th:field="*{password}"          placeholder="Passwort" /></div>
+=======
+        <section layout:fragment="content">
+            <h1 class="content_header">Personal registrieren</h1>
+            <div class="loginForm" id="staffregister">
+                <form role="form" th:action="@{/manager/staff/add}" th:object="${registrationForm}" method="post">
+                    <div class="field">
+                        <label for="firstname">Vorname</label><br>
+                        <input id="firstname" name="firstname" type="text" required="required"
+                            th:field="*{firstname}" />
+                    </div>
+                    <div class="field">
+                        <label for="lastname">Nachname</label><br>
+                        <input id="lastname" name="lastname" type="text" required="required" th:field="*{lastname}" />
+                    </div>
+                    <div class="field">
+                        <label for="email">E-Mail</label><br>
+                        <input id="email" name="email" type="email" required="required" th:field="*{email}" />
+                    </div>
+                    <div class="field">
+                        <label for="password">Passwort</label><br>
+                        <input id="password" name="password" type="password" required="required"
+                            th:field="*{password}" />
+                    </div>
+                    <br>
+>>>>>>> developer:src/main/resources/templates/manager/addStaff.html
+                    <button class="button" type="submit">Register</button>
+                </form>
+            </div>
+        </section>
+    </div>
+<<<<<<< HEAD:src/main/resources/templates/register.html
+</body> 
+=======
+</body>
+>>>>>>> developer:src/main/resources/templates/manager/addStaff.html
+
+</html>

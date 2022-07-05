@@ -1,0 +1,43 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout.html}">
+
+<head>
+    <title>Persönliche Daten</title>
+</head>
+
+<body>
+    <div class="ui_container">
+        <section layout:fragment="content">
+            <div class="catalog">
+                <h1 class="content_header">persönliche Daten</h1>
+                </br>
+                <p th:if="guest == null">Daten konnten nicht geladen werden!</p>
+                <table th:if="guest != null">
+                    <thead>
+                        <tr>
+                            <th>Vorname</th>
+                            <th>Nachname</th>
+                            <th>E-Mail</th>
+                            <th>Telefonnummer</th>
+                            <th>Kreditkartennnummer</th>
+                        </tr>
+                    <tbody>
+                        <tr>
+                            <td th:text="${guest.getFirstname()}">firstname</td>
+                            <td th:text="${guest.getLastname()}">lastname</td>
+                            <td th:text="${guest.getEmail()}">email</td>
+                            <td th:text="${guest.getPhoneNumber()}">phoneNumber</td>
+                            <td th:text="${guest.getCreditCardNumber()}">CreditCardNumber</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </br>
+                <a th:href="@{/guest/update}">Details bearbeiten</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

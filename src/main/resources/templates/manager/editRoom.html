@@ -1,0 +1,40 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout.html}">
+
+<head>
+    <title>Zimmer bearbeiten</title>
+</head>
+
+<body>
+    <div class="ui_container">
+        <section layout:fragment="content">
+            <div class="catalog">
+                <h1>Zimmer bearbeiten</h1>
+                </br>
+                <form role="form" th:object="${RoomAddForm}" method="post">
+                    <a>Name: </a><a th:text="${room.getName()}">room</a>
+                    <br>
+                    <a>Type: </a><a th:text="${room.getType()}">type</a>
+                    </br>
+                    <div class="field">
+                        <label for="price">Preis: </label>
+                        <input id="price" name="price" type="number" min="0" required="required" th:value="${price}" />
+                    </div>
+                    </br>
+                    <input type="checkbox" id="equipments" name="equipments" th:each="equipment : ${equipments}"
+                        th:checked="${equipment.getValue()}" th:text="${equipment.getKey()}"
+                        th:value="${equipment.getKey().name()}" />
+                    <br>
+                    <button type="submit" th:action="@{/manager/room/edit/{id}(id=${room.getId()})}">Speichern</button>
+                </form>
+                </br>
+                <p><a th:href="@{/manager/rooms}">Zurück</a></p>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
